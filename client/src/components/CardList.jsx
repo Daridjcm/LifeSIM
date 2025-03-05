@@ -6,6 +6,7 @@ import {
   Chip,
   Button,
   Tooltip,
+  Image
 } from "@heroui/react";
 import {
   ArrowLeftEndOnRectangleIcon,
@@ -48,7 +49,7 @@ const CardList = React.memo(({
         return "text-cyan-800 bg-cyan-400";
       case "Grocery":
         return "text-green-800 bg-green-400";
-      case "Mall":
+      case "Hospital":
         return "text-gray-800 bg-gray-400";
       case "Cafeteria":
         return "text-orange-800 bg-orange-400";
@@ -89,7 +90,7 @@ const CardList = React.memo(({
 
   return (
     <>
-      <div className="gap-x-1 gap-y-5 mt-5 mb-5 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2">
+      <div className="gap-x-1 gap-y-5 mt-5 mb-5 grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1">
         {displayItems === 0 ? (
           <p>No hay productos para mostrar</p>
         ) : (
@@ -97,18 +98,19 @@ const CardList = React.memo(({
             <Card
               key={index}
               shadow="sm"
-              className="m-auto max-w-[90%] min-w-[90%]"
+              className={
+                iconShow ? 'm-auto max-w-[90%] max-h-full' : 'max-w-full max-h-fit'
+              }
               aria-label={item.name}
             >
               <CardBody className="overflow-hidden p-0">
-                <img
-                  src={item.img}
+                <Image 
                   alt={item.name}
-                  className={
-                    iconShow
-                      ? "w-full h-full"
-                      : "object-cover w-full max-w-fit sm:h-24 md:h-20 lg:max-h-fit m-auto"
-                  }
+                  src={item.img}
+                  width={450}
+                  height={200}
+                  isBlurred
+                  isZoomed
                 />
                 {iconShow ? null : (
                   <div className="flex justify-end mx-4">
