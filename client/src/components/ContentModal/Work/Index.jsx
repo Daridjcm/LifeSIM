@@ -5,23 +5,11 @@ import PorcentageTasks from "../../PorcentageTasks.jsx";
 import PhoneCorporative from "./PhoneCorporative.jsx";
 import CustomButton from "../../CustomButton.jsx";
 
-export default function ContentWork() {
+export default function Index() {
   const [submitSignature, setSubmitSignature] = useState(false);
 
   return (
     <>
-      <div className="flex flex-row justify-around mb-8">
-        <p>Profession:</p>
-        <p>Work Experience (years):</p>
-        <p>Company:</p>
-        <p className="flex items-center gap-1">
-          Money earned per day <BanknotesIcon className="size-5" />
-          <span id="moneyPerDay" className="text-green-500">
-            ($0)
-          </span>
-        </p>
-      </div>
-
       <div className="flex flex-col gap-4 lg:grid lg:grid-cols-3">
         <div className="w-full bg-slate-100 rounded p-4 lg:col-span-1">
           <p className="text-xl font-bold">How start your job daily</p>

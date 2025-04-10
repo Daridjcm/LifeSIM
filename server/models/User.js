@@ -19,6 +19,10 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      blood_type: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
     },
     {
       timestamps: true,
@@ -28,7 +32,7 @@ export default (sequelize, DataTypes) => {
 
   User.associate = (models) => {
     User.hasMany(models.Invoice, {
-      foreignKey: "userID",
+      foreignKey: "user_id",
       as: "invoices",
     });
   };
